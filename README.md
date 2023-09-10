@@ -45,12 +45,17 @@ npx tailwindcss init
 
 ...
 
-4.Add the tailwind directives at the the top of 'index.css' file
+4. Add the tailwind directives at the the top of 'index.css' file
 ...
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+5. Add following details in the plugin property of tailwind config file
+...
+require( "daisyui"), require("@tailwindcss/line-clamp")
+...
 
 # Adding pluging and dependencies
 ...
