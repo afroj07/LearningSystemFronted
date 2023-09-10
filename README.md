@@ -30,7 +30,7 @@ check Tailwind official instruction doc
 
 1.install tailxind css
 ...
-npm i -D tailwindcss
+npm i -D tailwindcss postcss autoprefixer
 ...
 
 2.create tailwind config file
@@ -41,7 +41,7 @@ npx tailwindcss init
 3. Add file extension to tailwind config file in the content property
 ...
 
-"./src/**/*.{html,js,jsx, ts, tsx}"
+"./index.html", "./src/**/*.{html,js,jsx, ts, tsx}"
 
 ...
 

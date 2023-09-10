@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState={
     isLoggedIn:localStorage.getItem('isLoggedIn')||false,
-    role:localStorage.setItem('role')||"",
+   // role:localStorage.setItem('role')||"",
     data:localStorage.getItem('data')||{},
 };
 
