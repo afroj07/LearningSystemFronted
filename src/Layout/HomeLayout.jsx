@@ -1,9 +1,19 @@
 import React from 'react'
 import {FiMenu} from 'react-icons/fi'
 import {AiFillCloseCircle} from 'react-icons/ai';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Footer from '../components/Footer';
+import { useDispatch, useSelector } from 'react-redux';
 const HomeLayout = ({children}) => {
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  // checking user logedin
+  const isLoggedIn = useSelector((state) => state?.auth?.isLoggedIn);
+
+    // for displatyig the option acc role
+const role = useSelector((state)=>state?.auth?.role);
 
     function changewidth(){
         const drawSide = document.getElementsByClassName('drawer-side');
@@ -15,6 +25,14 @@ const HomeLayout = ({children}) => {
         const drawSide = document.getElementsByClassName('drawer-side');
         drawSide[0].style.width=0;
       
+    }
+
+    async function handleLogout(e){
+      e.preventDefault();
+      //if(res?.payload?.success);
+     // const res= await dispatch(logout());
+
+     navigate('/');
     }
   return (
     <div className='min-h-[90vh]'> 
@@ -40,6 +58,11 @@ const HomeLayout = ({children}) => {
                     <li className='hover:bg-slate-600'>
                       <Link to="/">Home</Link>
                     </li>
+                    {isLoggedIn && role=== 'ADMIN' &&(
+                      <li>
+                        <Link to='/admin/dashboard'>Admin DashBoard</Link>
+                      </li>
+                    )}
                     <li className='hover:bg-slate-600'>
                       <Link to="/courses">All Courses</Link>
                     </li>
@@ -49,6 +72,35 @@ const HomeLayout = ({children}) => {
                     <li className='hover:bg-slate-600'>
                       <Link to="/about">About Us</Link>
                     </li>
+                    {!isLoggedIn && (
+                    <li className=' w-[90%]'>
+                    <div className='w-full flex items-center justify-center '>
+                      <button className='btn-primary px-4 py-1 font-semibold rounded-md w-full'>
+                       <Link to="/login">Login</Link>
+                      </button>
+                      <button className='btn-secondary px-4 py-1 font-semibold rounded-md w-full'>
+                       <Link to="/login">SignUp</Link>
+                      </button>
+
+                    </div>
+                    </li>
+                    )
+                    }
+                       {isLoggedIn && (
+                    <li className='absolute  w-[90%]'>
+                    <div className='w-full flex items-center justify-center '>
+                      <button className='btn-primary px-4 py-1 font-semibold rounded-md w-full'>
+                       <Link to="/user/profile">Profile</Link>
+                      </button>
+                      <button className='btn-secondary px-4 py-1 font-semibold rounded-md w-full'>
+                       <Link onClick={handleLogout}>Logout</Link>
+                      </button>
+
+                    </div>
+                    </li>
+                    )
+                    }
+
                 </ul>
             </div>
         </div>
