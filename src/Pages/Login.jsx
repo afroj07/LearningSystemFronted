@@ -42,8 +42,8 @@ const Login = () => {
   
     const response = await dispatch(login(loginData));
 
-    // redirect to login page if true
-    if (response?.payload?.success) navigate("/login");
+   
+    if (response?.payload?.success) navigate("/");
 
     // clearing the signup inputs
     setLoginData({

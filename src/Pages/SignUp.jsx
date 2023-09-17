@@ -97,7 +97,9 @@ const SignUp = () => {
     const response = await dispatch(createAccount(formData));
 
     // redirect to login page if true
-    if (response?.payload?.success) navigate("/login");
+    if (response?.payload?.success){
+       navigate('/');
+    } 
 
     // clearing the signup inputs
     setSignupData({

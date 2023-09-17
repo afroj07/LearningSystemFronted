@@ -5,7 +5,7 @@ import toast from "react-hot-toast";
 const initialState={
     isLoggedIn:localStorage.getItem('isLoggedIn')||false,
     role:localStorage.getItem('role')||"",
-    data:JSON.parse( localStorage.getItem('data'))||{},
+    data:localStorage.getItem( localStorage.getItem('data'))||{},
 };
 
 //handle signup
