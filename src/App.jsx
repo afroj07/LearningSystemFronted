@@ -7,6 +7,7 @@ import AboutUs from './Pages/AboutUs';
 import NotFound from './Pages/NotFound';
 import SignUp from './Pages/SignUp';
 import Login from './Pages/Login';
+import CourseList from './Pages/Course/CourseList';
 
 function App() {
   
@@ -15,7 +16,7 @@ function App() {
     <Routes>
       <Route path='/' element={<Homepage/>}/>
       <Route path='/about' element={<AboutUs/>}/>
-      
+      <Route path='/courses' element={<CourseList/>}/>
         <Route path='/login' element={<Login/>}/>  
        <Route path='/signup'  element={<SignUp/>}/>
        <Route path='*' element={<NotFound/>}/>
