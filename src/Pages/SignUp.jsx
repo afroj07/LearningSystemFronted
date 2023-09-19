@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate,  } from "react-router-dom";
 import Layout from "../Layout/HomeLayout";
 import { BsPersonCircle } from "react-icons/bs";
 import { toast } from "react-hot-toast";
 import { useDispatch } from "react-redux";
 import { createAccount } from "../Redux/Slices/AuthSlice";
+import { isEmail, isValidPassword } from "../Helpers/regexMatcher";
 
 const SignUp = () => {
   const dispatch = useDispatch();
@@ -71,15 +72,13 @@ const SignUp = () => {
     }
 
     // email validation using regex
-    if (
-      !signupData.email.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)
-    ) {
+    if (!isEmail(signupData.email)) {
       toast.error("Invalid email id");
       return;
     }
 
     // password validation using regex
-    if (!signupData.password.match(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,20}$/)) {
+    if (!isValidPassword(signupData.password)) {
       toast.error(
         "Minimum password length should be 8 with Uppercase, Lowercase, Number and Symbol"
       );
@@ -187,6 +186,7 @@ const SignUp = () => {
               id="password"
               placeholder="Enter your password"
               className="bg-transparent px-2 py-1 border"
+      
               value={signupData.password}
               onChange={handleUserInput}
             />

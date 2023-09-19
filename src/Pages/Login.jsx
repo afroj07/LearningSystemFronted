@@ -43,7 +43,7 @@ const Login = () => {
     const response = await dispatch(login(loginData));
 
    
-    if (response?.payload?.success) navigate("/");
+    if (response?.payload?.success) navigate('/');
 
     // clearing the signup inputs
     setLoginData({

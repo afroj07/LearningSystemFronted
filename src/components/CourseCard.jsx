@@ -1,7 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 
-const CourseCard = () => {
+const CourseCard = ({data}) => {
 const navigate = useNavigate();
 
   return (
