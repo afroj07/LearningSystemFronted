@@ -6,7 +6,7 @@ const navigate = useNavigate();
 
   return (
     <div
-    onClick={()=>navigate('/course/description/')} 
+    onClick={()=>navigate('/course/description/', {state:{...data}})} 
     className='text-white w-[22rem] h-[430px] shadow-lg rounded-lg cursor-pointer group overflow-hidden bg-zinc-700'>
         <div className='overflow-hidden'>
           <img src={data?.thumbnail?.secure_url} 
