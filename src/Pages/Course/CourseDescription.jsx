@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react'
+
 import { useLocation } from 'react-router-dom';
 import HomeLayout from '../../Layout/HomeLayout';
 import { useSelector } from 'react-redux';
 
  const CourseDescription = () => {
-    
+
        const {state} = useLocation();
      const {role, data}= useSelector((state)=>state.auth);
 
