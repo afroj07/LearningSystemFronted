@@ -159,22 +159,22 @@ async function onFormSubmit(e){
                 </div>
                 <div className='flex flex-col gap-1'>
                  <label htmlFor="description" className='text-lg font-semibold'>
-                  Course tittle
+                  Course description
                  </label>
-                 <textarea
+                 <textarea 
                  required
-                 name='discription'
-                 id='discription'
-                 placeholder='Enter course discription'
-                 className='bg-transparent px-2 py-1 h-24 overflow-y-scroll resize-none  border'
-                 type="text"
+                 name="description" id="description" 
+                 placeholder='Enter course description'
+                 className='bg-transparent px-2 py-1 h-24 overflow-y-scroll resize-none border'
                  value={userInput.description}
                  onChange={handleUserInput}
-                 />
+                 ></textarea>
                 </div>
              </div>
           </main>
-           <button className='w-full bg-yellow-600 py-2   rounded-sm font-semibold text-lg hover:bg-yellow-500 transition-all ease-in-out'>
+           <button
+           type='submit'
+            className='w-full bg-yellow-600 py-2   rounded-sm font-semibold text-lg hover:bg-yellow-500 transition-all ease-in-out'>
             Create Course
            </button>
          </form>
