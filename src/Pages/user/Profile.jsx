@@ -26,7 +26,7 @@ const Profile = () => {
                 Email:
                </p>
                <p>
-                {userData.email}
+                {userData?.email}
                </p>
                <p>Role:</p>
                <p>
