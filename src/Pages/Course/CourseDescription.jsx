@@ -35,9 +35,9 @@ import { useSelector } from 'react-redux';
                     {state?.createdBy}
                  </p>
                 </div>
-               {role==='ADMIN' || data?.subsciption?.status==='ACTIVE'?
+               {role==='ADMIN' || data?.subsciption?.status==='active'?
                
-               (<button className='bg-yellow-600 text-xl rounded-md font-bold px-5 w-full hover:bg-yellow-500 transition-all ease-in-out duration-300 '>
+               (<button onClick={()=>navigate('/course/displaylectures', {state:{...state}})} className='bg-yellow-600 text-xl rounded-md font-bold px-5 w-full hover:bg-yellow-500 transition-all ease-in-out duration-300 '>
                 Watch lectures
 
                </button>):(
