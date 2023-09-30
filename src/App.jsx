@@ -15,6 +15,8 @@ import RequireAuth from './components/Auth/RequireAuth';
 import CreateCourse from './Pages/Course/CreateCourse';
 import Profile from './Pages/user/Profile';
 import EditProfile from './Pages/user/EditProfile';
+import Checkout from './Pages/payments/Checkout';
+import CheckoutSuccess from './Pages/payments/CheckoutSuccess';
 function App() {
   
   return (
@@ -35,6 +37,8 @@ function App() {
         {/* <Route element={<RequireAuth allowedRoles={[ "ADMIN", "USER"]}/>}>  */}
         <Route path='/user/profile' element={<Profile/>}/>
         <Route path='/user/editprofile' element={<EditProfile/>}/>
+        <Route path='/checkout' element={<Checkout/>}/>
+        R<Route path='checkout/success' element={<CheckoutSuccess/>}/>
         {/* </Route>  */}
 
        <Route path='*' element={<NotFound/>}/>
