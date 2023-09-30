@@ -11,8 +11,6 @@ const dispatch = useDispatch();
 const navigate =   useNavigate();
 const razorpayKey = useSelector((state)=>state?.razorpay?.key);
 const subscription_id = useSelector((state)=>state?.razorpay?.subscription_id)
-const userData = useSelector((state)=>state?.auth?.data);  
-const isPaymentVerified = useSelector((state)=>state?.razorpay?.isPaymentVerified)
 const paymentDetails = {
   razorpay_payment_id:"",
   razorpay_subscription_id: "",
@@ -104,6 +102,6 @@ return (
 
     
   )
-}
 
+}
 export default Checkouts;

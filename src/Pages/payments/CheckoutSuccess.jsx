@@ -1,10 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import HomeLayout from '../../Layout/HomeLayout'
 import { AiFillCheckCircle, AiFillCiCircle } from 'react-icons/ai'
 import { Link } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { getUserData } from '../../Redux/Slices/AuthSlice'
 
 const CheckoutSuccess = () => {
-
+const dispatch = useDispatch();
+useEffect(()=>{
+  dispatch(getUserData());
+})
 
 
   return (
