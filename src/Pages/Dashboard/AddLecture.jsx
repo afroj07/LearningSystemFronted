@@ -11,7 +11,7 @@ const courseDetails = useLocation().state;
 const dispatch = useDispatch();
 const navigate = useNavigate();
 const [userInput, setUserInput] = useState({
-   id:courseDetails._id,
+   id:courseDetails?._id,
    lecture: undefined,
    title: " ",
    description: " ",
@@ -48,7 +48,7 @@ const [userInput, setUserInput] = useState({
       if(response?.payload?.success){
         navigate(-1);
         setUserInput({
-            id:courseDetails._id,
+            id:courseDetails?._id,
             lecture: undefined,
             title: " ",
             description: " ",
